@@ -1,0 +1,10 @@
+global:
+  configmap:
+    enabled: true
+    fullnameOverride: mfe-unified-queue
+    data:
+      manifest.json: |
+        {
+          "url": "{{ requiredEnv "MANIFEST_URL" }}",
+          "scope": "unifiedQueue"
+        }

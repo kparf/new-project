@@ -1,0 +1,24 @@
+apiVersion: v2
+name: test-ci-cd-app-mfe-manifest
+version: 1.0.0
+description: unified queue mfe Helm chart
+keywords:
+  - teladoc
+# home: https://github.com/Teladoc/golang-sample-app
+appVersion: 1.0.0
+# engine: gotpl
+type: application
+kubeVersion: ">=1.19.0-0"
+# sources:
+#   - https://github.com/Teladoc/golang-sample-app
+#   - https://github.com/Teladoc/helm-charts
+maintainers:
+  - name: UCP team
+#    email: The maintainer's email (optional for each maintainer)
+#    url: A URL for the maintainer (optional for each maintainer)
+
+dependencies:
+  - name: configmap
+    repository: "https://artifactory.intouchhealth.io/artifactory/helm"
+    version: 1.1.0
+    condition: global.configmap.enabled

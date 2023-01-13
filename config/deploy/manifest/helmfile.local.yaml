@@ -1,0 +1,20 @@
+repositories:
+  - name: helm-charts
+    url: https://artifactory.intouchhealth.io/artifactory/helm
+    username: {{ requiredEnv "ARTIFACTORY_HELM_REPO_USER" }}
+    password: {{ requiredEnv "ARTIFACTORY_HELM_REPO_PASS" }}
+
+helmDefaults:
+  wait: true
+  timeout: 600
+  historyMax: 50
+
+releases:
+  - name: test-ci-cd-app-mfe-manifest   # set name of release
+    namespace: default       # set namespace
+    chart: ./chart
+    createNamespace: false
+    missingFileHandler: Info
+    values:
+      - ./values.yaml.gotmpl
+      - ./envs/local/values.yaml

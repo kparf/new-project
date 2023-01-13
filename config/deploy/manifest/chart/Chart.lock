@@ -1,0 +1,6 @@
+dependencies:
+- name: configmap
+  repository: https://artifactory.intouchhealth.io/artifactory/helm
+  version: 1.1.0
+digest: sha256:eef88ea33e86aa8e8eec7d055656099081f9d0cfe9c8e2a402b99601f69ef7fc
+generated: "2022-12-26T19:37:04.589206+03:00"
