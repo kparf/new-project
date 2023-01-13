@@ -1,0 +1,5 @@
+tsconfig.json
+*.html
+package.json
+yarn.lock
+storybook-static

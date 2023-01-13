@@ -1,0 +1,16 @@
+{
+  "semi": false,
+  "parser": "typescript",
+  "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+  ],
+  "pluginSearchDirs": [
+      "."
+  ],
+  "importOrder": [
+      "./publicPath",
+      "^@/(.*)$",
+      "^[../]",
+      "^[./]"
+  ]
+}
