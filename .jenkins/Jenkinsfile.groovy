@@ -6,7 +6,7 @@ pipeline {
 
   environment {
     cmkArn = credentials("devops-svc-kms-key")
-    APP_NAME = env.APP_NAME
+    APP_NAME = 'test-ci-cd-app'
 
     DOCKER_REGISTRY = "docker-snapshot-local.artifactory.intouchhealth.io"
 
@@ -20,7 +20,7 @@ pipeline {
 
     DOCKER_REGISTRY_URL = "${env.DOCKER_REGISTRY_TYPE}.${env.DOCKER_REGISTRY_DOMAIN}/${env.ARTIFACTORY_PREFIX}"
 
-    S3_STATIC_FOLDER = APP_NAME
+    S3_STATIC_FOLDER = "${APP_NAME}"
     BASE_MANIFEST_URL = "/${S3_STATIC_FOLDER}"
 
     //TDB
