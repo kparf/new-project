@@ -1,5 +1,5 @@
 {
-  "name": "react-generated-app",
+  "name": "test-ci-cd-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,8 @@
     "prettier-fix": "yarn prettier --parser typescript --write \"**/**.(ts|tsx)\"",
     "prettier-fix:styles": "yarn prettier --parser scss --write \"**/**.scss\"",
     "prettier-check:ts": "yarn prettier --parser typescript --check \"**/**.(ts|tsx)\"",
-    "prettier-check:styles": "yarn prettier --parser scss --check \"**/**.scss\""
+    "prettier-check:styles": "yarn prettier --parser scss --check \"**/**.scss\"",
+    "share:types": "tsc --declaration && api-extractor run --local --verbose && mv ./dist/test-ci-cd-app.d.ts ./package/index.d.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -32,6 +33,7 @@
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-react": "7.16.0",
     "@babel/preset-typescript": "^7.18.6",
+    "@microsoft/api-extractor": "^7.33.7",
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "@types/jest": "^29.2.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",

@@ -1,9 +1,13 @@
 import styles from "./app.styles.scss"
 
-function App() {
+export type AppProps = {
+  prop1?: string
+}
+
+function App({ prop1 }: AppProps) {
   return (
     <div className={styles.App} data-testid="react-template">
-      React Template Example
+      React Template Example {prop1}
     </div>
   )
 }
